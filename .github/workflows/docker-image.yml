@@ -17,4 +17,4 @@ jobs:
     - name: Build the Docker image
       run: |
         docker build . -t  moscityhack-front
-        docker image push --tag moscityhack-front
+        docker image push moscityhack-front
