@@ -2,7 +2,7 @@ import * as icons from '@mdi/js';
 import { createApp } from 'vue';
 import App from './App.vue';
 import index from './router';
-import affilate from './router/affilate';
+import affiliate from './router/affiliate';
 import manager from './router/manager';
 import vuetify from './plugins/vuetify';
 import { loadFonts } from './plugins/webfontloader';
@@ -17,8 +17,8 @@ const router = () => {
   let routes;
   if (parts.length === domainLength - 1 || parts[0] === 'www') {
     routes = index;
-  } else if (parts[0] == 'affilate') {
-    routes = affilate;
+  } else if (parts[0] == 'affiliate') {
+    routes = affiliate;
     console.log(routes);
   } else if (parts[0] == 'manager') {
     routes = manager;

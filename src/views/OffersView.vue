@@ -20,7 +20,7 @@
           <th style="text-align: center">{{ channel }}</th>
           <th style="text-align: center">{{ channel }}</th>
           <th style="text-align: center">
-            <v-btn @click="$router.push(`/offer${channel}`)">Детали</v-btn>
+            <v-btn @click="$router.push(`/offer_${channel}`)">Детали</v-btn>
           </th>
           <th style="text-align: center">
             <v-btn
