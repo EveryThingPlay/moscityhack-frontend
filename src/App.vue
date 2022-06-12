@@ -24,6 +24,16 @@ export default {
   data: () => ({
     userType: 'publisher',
   }),
+  mounted() {
+    let url = window.location.origin;
+    url = url.replace('http://', '');
+    url = url.split('.');
+    if (url[0] == 'manager') {
+      this.userType = 'manager';
+    } else if (url[0] == 'publisher') {
+      this.userType = 'publisher';
+    }
+  },
 };
 </script>
 

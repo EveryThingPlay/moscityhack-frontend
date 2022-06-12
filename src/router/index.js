@@ -4,6 +4,7 @@ const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
     {
+      meta: { domains: 'affilate.localhost:3000' },
       path: '/offers',
       name: 'Offers',
       component: () => import('../views/OffersView.vue'),
@@ -24,7 +25,8 @@ const router = createRouter({
       component: () => import('../views/RegisterView.vue'),
     },
     {
-      path: '/manager/offers',
+      meta: { domains: 'manager.localhost:3000' },
+      path: '/offers',
       name: 'offersAdmin',
       component: () => import('../views/ManagerOffersView.vue'),
     },
