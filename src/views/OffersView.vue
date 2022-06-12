@@ -49,7 +49,7 @@ export default {
   methods: {
     copyLink(link) {
       console.log(navigator.clipboard);
-      //navigator.clipboard.writeText(link);
+      navigator.clipboard.writeText(link);
       this.snackbar = true;
       setTimeout(() => (this.snackbar = false), 1500);
     },
