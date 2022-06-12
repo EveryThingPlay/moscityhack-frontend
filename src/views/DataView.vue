@@ -83,10 +83,10 @@ export default {
   methods: {
     doStuff(id) {
       if (this.$route.params.channel == undefined) {
-        this.$router.push(`/manager/${id}`);
+        this.$router.push(`/data/${id}`);
       }
       if (this.$route.params.channel != undefined && this.$route.params.group == undefined) {
-        this.$router.push(`/manager/${this.$route.params.channel}/${id}`);
+        this.$router.push(`/data/${this.$route.params.channel}/${id}`);
       }
     },
   },

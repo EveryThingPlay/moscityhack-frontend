@@ -1,8 +1,8 @@
 <template>
   <v-app>
     <v-navigation-drawer v-if="userType == 'manager'">
-      <v-tab to="/manager" stacked style="width: 100%">Данные</v-tab>
-      <v-tab to="/manager/files" stacked style="width: 100%">Файлы</v-tab>
+      <v-tab to="/data" stacked style="width: 100%">Данные</v-tab>
+      <v-tab to="/files" stacked style="width: 100%">Файлы</v-tab>
     </v-navigation-drawer>
     <v-navigation-drawer v-if="userType == 'publisher'">
       <v-tab to="/offers" stacked style="width: 100%">Офферы</v-tab>
