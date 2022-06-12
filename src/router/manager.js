@@ -9,6 +9,11 @@ const router = createRouter({
       component: () => import('../views/ManagerOffersView.vue'),
     },
     {
+      path: '/finances',
+      name: 'financeAdmin',
+      component: () => import('../views/FinancesView.vue'),
+    },
+    {
       path: '/offers/:offer',
       name: 'offerAdmin',
       component: () => import('../views/ManagerOfferView.vue'),

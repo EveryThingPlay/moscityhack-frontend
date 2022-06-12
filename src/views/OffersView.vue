@@ -34,7 +34,7 @@
         </tr>
       </tbody>
     </v-table>
-    <v-snackbar v-model="snackbar"> Ссылка скопирована в буфер обмена! </v-snackbar>
+    <v-snackbar v-if="snackbar"> Ссылка скопирована в буфер обмена! </v-snackbar>
   </v-container>
 </template>
 
@@ -48,7 +48,8 @@ export default {
   },
   methods: {
     copyLink(link) {
-      navigator.clipboard.writeText(link);
+      console.log(navigator.clipboard);
+      //navigator.clipboard.writeText(link);
       this.snackbar = true;
       setTimeout(() => (this.snackbar = false), 1500);
     },

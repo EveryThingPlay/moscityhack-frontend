@@ -1,44 +1,51 @@
 <template>
   <v-container>
-    <h1 v-if="$route.params.channel == undefined">Данные по всем каналам</h1>
-    <h1 v-if="$route.params.channel != undefined && $route.params.group == undefined">
-      Данные по каналу {{ $route.params.channel }}
-    </h1>
-    <h1 v-if="$route.params.group != undefined">Данные по компании {{ $route.params.group }}</h1>
-    <br />
-    <v-table>
-      <thead style="background-color: #2196f3; color: white">
-        <tr v-if="$route.params.id == undefined">
-          <th class="text-left">Канал</th>
-          <th class="text-left">Охват</th>
-          <th class="text-left">Продажи</th>
-          <th class="text-left">CAC</th>
-          <th class="text-left">ARPU</th>
-          <th class="text-left">LTV</th>
-          <th class="text-left">ROI</th>
-        </tr>
-        <tr v-if="$route.params.id != undefined">
-          <th class="text-left">Компания</th>
-          <th class="text-left">Охват</th>
-          <th class="text-left">Продажи</th>
-          <th class="text-left">CAC</th>
-          <th class="text-left">ARPU</th>
-          <th class="text-left">LTV</th>
-          <th class="text-left">ROI</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="channel in channels" :key="channel.name" @click="doStuff(channel.id)">
-          <th>{{ channel.name }}</th>
-          <th>{{ channel.views }}</th>
-          <th>{{ channel.sells }}</th>
-          <th>{{ channel.cac }}</th>
-          <th>{{ channel.arpu }}</th>
-          <th>{{ channel.ltv }}</th>
-          <th>{{ channel.roi }}</th>
-        </tr>
-      </tbody>
-    </v-table>
+    <v-card>
+      <v-card-header>
+        <h1 v-if="$route.params.channel == undefined">Данные по всем каналам</h1>
+        <h1 v-if="$route.params.channel != undefined && $route.params.group == undefined">
+          Данные по каналу {{ $route.params.channel }}
+        </h1>
+        <h1 v-if="$route.params.group != undefined">
+          Данные по компании {{ $route.params.group }}
+        </h1>
+      </v-card-header>
+      <v-card-text>
+        <v-table>
+          <thead style="background-color: #2196f3; color: white">
+            <tr v-if="$route.params.id == undefined">
+              <th class="text-left">Канал</th>
+              <th class="text-left">Охват</th>
+              <th class="text-left">Продажи</th>
+              <th class="text-left">CAC</th>
+              <th class="text-left">ARPU</th>
+              <th class="text-left">LTV</th>
+              <th class="text-left">ROI</th>
+            </tr>
+            <tr v-if="$route.params.id != undefined">
+              <th class="text-left">Компания</th>
+              <th class="text-left">Охват</th>
+              <th class="text-left">Продажи</th>
+              <th class="text-left">CAC</th>
+              <th class="text-left">ARPU</th>
+              <th class="text-left">LTV</th>
+              <th class="text-left">ROI</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="channel in channels" :key="channel.name" @click="doStuff(channel.id)">
+              <th>{{ channel.name }}</th>
+              <th>{{ channel.views }}</th>
+              <th>{{ channel.sells }}</th>
+              <th>{{ channel.cac }}</th>
+              <th>{{ channel.arpu }}</th>
+              <th>{{ channel.ltv }}</th>
+              <th>{{ channel.roi }}</th>
+            </tr>
+          </tbody>
+        </v-table>
+      </v-card-text>
+    </v-card>
   </v-container>
 </template>
 
