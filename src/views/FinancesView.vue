@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-card>
+    <!--<v-card>
       <v-card-header> <h1>Оптимизация CPC расходов</h1> </v-card-header>
       <v-card-text>
         <v-select label="Выберите канал"></v-select>
@@ -29,7 +29,7 @@
           </Chart>
         </v-container>
       </v-card-text>
-    </v-card>
+    </v-card>-->
   </v-container>
 </template>
 
@@ -42,16 +42,16 @@ export default defineComponent({
   components: { Chart, Grid, Line },
   setup() {
     const data = [
-      { name: '10', pl: 1000, avg: 500, inc: 300 },
-      { name: '20', pl: 2000, avg: 900, inc: 400 },
-      { name: '30', pl: 400, avg: 400, inc: 500 },
-      { name: '40', pl: 3100, avg: 1300, inc: 700 },
-      { name: '50', pl: 200, avg: 100, inc: 200 },
-      { name: '60', pl: 600, avg: 400, inc: 300 },
-      { name: '70', pl: 500, avg: 90, inc: 100 },
-      { name: '80', pl: 1000, avg: 500, inc: 300 },
+      { name: '10', pl: 50, avg: 50, inc: 300 },
+      { name: '20', pl: 120, avg: 900, inc: 400 },
+      { name: '30', pl: 300, avg: 400, inc: 500 },
+      { name: '40', pl: 580, avg: 1300, inc: 700 },
+      { name: '50', pl: 700, avg: 100, inc: 200 },
+      { name: '60', pl: 900, avg: 400, inc: 300 },
+      { name: '70', pl: 1200, avg: 90, inc: 100 },
+      { name: '80', pl: 1600, avg: 500, inc: 300 },
       { name: '90', pl: 2000, avg: 900, inc: 400 },
-      { name: '100', pl: 400, avg: 400, inc: 500 },
+      { name: '100', pl: 2200, avg: 400, inc: 500 },
     ];
     const direction = ref('horizontal');
     const margin = ref({
