@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <!--<v-card>
+    <v-card>
       <v-card-header> <h1>Оптимизация CPC расходов</h1> </v-card-header>
       <v-card-text>
         <v-select label="Выберите канал"></v-select>
@@ -29,7 +29,7 @@
           </Chart>
         </v-container>
       </v-card-text>
-    </v-card>-->
+    </v-card>
   </v-container>
 </template>
 

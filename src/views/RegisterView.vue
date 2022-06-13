@@ -12,22 +12,22 @@
       <v-text-field
         hide-details="auto"
         label="Имя"
-        v-model="name"
+        v-model="firstName"
         :rules="[(v) => !!v || 'Это поле не может быть пустым']"
       ></v-text-field>
       <v-text-field
         hide-details="auto"
         label="Фамилия"
-        v-model="secondname"
+        v-model="secondName"
         :rules="[(v) => !!v || 'Это поле не может быть пустым']"
       ></v-text-field>
-      <v-text-field hide-details="auto" label="Отчество" v-model="fathername"></v-text-field>
+      <v-text-field hide-details="auto" label="Отчество" v-model="middleName"></v-text-field>
       <br />
       <h3>Авторизация</h3>
       <v-text-field
         hide-details="auto"
         label="Эл. почта"
-        v-model="username"
+        v-model="email"
         :rules="[(v) => !!v || 'Это поле не может быть пустым']"
       ></v-text-field>
       <br />
@@ -57,12 +57,16 @@
 </template>
 
 <script>
+import notoken from '../axios/notoken';
 export default {
   data() {
     return {
-      username: '',
+      firstName: '',
+      secondName: '',
+      middleName: '',
       passwordConfirm: '',
       password: '',
+      email: '',
       valid: true,
     };
   },
@@ -71,6 +75,16 @@ export default {
       await this.$refs.form.validate();
       if (this.valid) {
         this.$router.push('/');
+        const origin = document.location.origin.replace('http://', '').split('.')[0].t;
+
+        const response = await notoken.post('api/v1/authorization/signup', {
+          profileCommonInfo: {
+            login: this.email,
+            password: this.password,
+            email: this.email,
+          },
+          profileType: window.location.origin,
+        });
       }
     },
   },

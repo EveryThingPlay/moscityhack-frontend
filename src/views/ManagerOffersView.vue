@@ -56,7 +56,7 @@
           <v-textarea label="Описание оффера" v-model="offerDescription" no-resize></v-textarea>
           <v-select
             label="Категория"
-            :items="['Категория 1', 'Категория 2', 'Категория 3']"
+            :items="['Дебетовые карты', 'Кредитные карты', 'Вклады', 'Кредиты', 'Рассчётный счёт']"
           ></v-select>
         </v-col>
       </v-container>

@@ -10,9 +10,9 @@
       <br />
       <v-text-field
         hide-details="auto"
-        label="Email"
-        v-model="email"
-        :rules="[(v) => !!v || 'Вы не указали почту']"
+        label="Логин"
+        v-model="username"
+        :rules="[(v) => !!v || 'Вы не указали логин']"
       ></v-text-field>
       <v-text-field
         hide-details="auto"
@@ -27,6 +27,7 @@
 </template>
 
 <script>
+import notoken from '../axios/notoken';
 export default {
   data() {
     return {
@@ -39,7 +40,14 @@ export default {
     async auth() {
       await this.$refs.form.validate();
       if (this.valid) {
-        this.$router.push('/');
+        const response = await notoken.post('/api/v1/authorization/signup', {
+          login: this.username,
+          password: this.password,
+        });
+        console.log(response);
+        if (response.ok) {
+          await this.$router.push('/');
+        }
       }
     },
   },
