@@ -22,9 +22,11 @@
             За период: <br />
             От <input type="date" v-model="fromDate" /> До <input type="date" v-model="toDate" />
           </v-card-text>
-
-          <v-btn v-if="fromDate && toDate">Загрузить файл</v-btn>
-          <v-btn disabled v-else>Загрузить файл</v-btn>
+          <div style="width: 500px; display: flex; flex-direction: row; gap: 15px">
+            <v-file-input label="Выберите файл..." hide-details="auto"></v-file-input>
+            <v-btn style="height: 56px" v-if="fromDate && toDate">Загрузить файл</v-btn>
+            <v-btn style="height: 56px" disabled v-else>Загрузить файл</v-btn>
+          </div>
         </v-card-text>
       </v-card>
     </v-form>
@@ -43,6 +45,7 @@ export default {
       source: 'one',
       fromDate: null,
       toDate: null,
+      file: [],
     };
   },
 };

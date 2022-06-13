@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-card>
-      <v-card-header> <h1>Загрузка отчёта</h1> </v-card-header>
+      <v-card-header> <h1>Данные по клиентам</h1> </v-card-header>
       <v-card-text>
         <h3>За период:</h3>
         <br />

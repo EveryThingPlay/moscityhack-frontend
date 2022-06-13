@@ -36,10 +36,7 @@
         label="Пароль"
         type="password"
         v-model="password"
-        :rules="[
-          (v) => !!v || 'Это поле не может быть пустым',
-          (v) => v != passwordConfirm || 'Пароли не совпадают',
-        ]"
+        :rules="[(v) => !!v || 'Это поле не может быть пустым']"
       ></v-text-field>
       <v-text-field
         hide-details="auto"
@@ -48,7 +45,7 @@
         v-model="passwordConfirm"
         :rules="[
           (v) => !!v || 'Это поле не может быть пустым',
-          (v) => v != password || 'Пароли не совпадают',
+          (v) => v == password || 'Пароли не совпадают',
         ]"
       ></v-text-field>
       <v-btn block @click="auth()">Продолжить</v-btn>
@@ -82,9 +79,17 @@ export default {
             login: this.email,
             password: this.password,
             email: this.email,
+            firstName: this.firstName,
+            secondName: this.secondName,
+            middleName: this.middleName,
           },
-          profileType: window.location.origin,
+          profileType: origin,
         });
+        console.log(response);
+        if (response.status == 200) {
+          localStorage.setItem('token', response.data);
+          this.$router.push('/');
+        }
       }
     },
   },
